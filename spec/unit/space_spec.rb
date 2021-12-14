@@ -7,6 +7,8 @@ describe Space do
 
       expect(space_1).to be_a Space
       expect(space_1.description).to eq 'a charming open plan space in E London'
+      expect(space_1.name).to eq 'Makers Office'
+      # expect(space_1.available_from).to eq '01/01/2022'
     end  
   end
 end

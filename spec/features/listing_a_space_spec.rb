@@ -7,7 +7,7 @@ feature 'List A Space' do
     fill_in('description', with: 'a charming open space with exposed bricks')
     fill_in('price per night', with: '£100')
     fill_in('available from', with: '01-01-2022')
-    fill_in('available to', with: '06/01/2022')
+    fill_in('available to', with: '06-01-2022')
 
     click_button('List my Space')
 
