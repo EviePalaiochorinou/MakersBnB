@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+body{
+	min-height: 90vh;
+	background-color: whitesmoke;
+}
+
+#top{
+	width: 50%;
+	margin: auto;
+	display: flex;
+	align-items: flex-end;
+}
+
+#top a{
+	margin-left: 10px;
+}
+
+section{
+	color: #FF5A5F;
+	font-family: 'Roboto', sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+form{
+	display: flex;
+	flex-direction: column;
+	width: 20%;
+	border: 1px solid #FF5A5F;
+	box-shadow: 5px 5px 2px 1px #ff5a606e;
+	padding: 3em;
+}
+
+form input{
+	margin-top: 1em;
+	padding: 10px;
+}
+
+input[type=submit]{
+	border: none;
+	width: 50%;
+	margin-left: 6em;
+	font-family: 'Roboto', sans-serif;
+	cursor: pointer;
+	background-color: #00A699;
+	color: whitesmoke;
+	font-weight: bold;
+	box-shadow: 5px 5px 2px 1px #ff5a606e;
+}
+
+input[type=submit]:hover{
+	background-color:#FF5A5F;
+}
+
+input[type=email], input[type='password']{
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+}
+
+input[type=text]{
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+}
+
+
+::placeholder {
+  font-size: 1em;
+	font-family: 'Roboto', sans-serif;
+	opacity: 0.8;
+}

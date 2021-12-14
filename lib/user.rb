@@ -2,11 +2,10 @@ require 'pg'
 require_relative 'database_connection'
 
 class User
-    attr_reader :id, :email, :password, :username
-	def initialize(id:, email:, password:, username:)
+    attr_reader :id, :email, :username
+	def initialize(id:, email:, username:)
 		@id = id
 		@email = email
-		@password = password
 		@username = username
 	end
 
@@ -17,16 +16,41 @@ class User
 			[email, password, username]
 		)
 
+		User.new(
+			id: result[0]['id'],
+			email: result[0]['email'],
+			username: result[0]['username']
+		)
+  end
+
+	def self.authenticate(email: , password:)
+		result = DatabaseConnection.query(
+			"SELECT * FROM users WHERE email = $1;",
+			[email]
+		)
+		
+		return unless result[0]['password'] == password
 
 		User.new(
 			id: result[0]['id'],
 			email: result[0]['email'],
-			password: result[0]['password'],
 			username: result[0]['username']
 		)
+	end
 
-  end
+	def self.find(id:)
+		return nil unless id
+		
+		result = DatabaseConnection.query(
+			"SELECT * FROM users WHERE id = $1",
+			[id]
+		)
+		User.new(
+			id: result[0]['id'], 
+			email: result[0]['email'],
+			username: result[0]['username']
+		)
+	end
+
+
 end
-
-
-
