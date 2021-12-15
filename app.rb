@@ -3,6 +3,7 @@ require 'sinatra/reloader'
 require './database_connection_setup.rb'
 
 require './lib/user.rb'
+require './lib/space.rb'
 
 
 class MakersBnB < Sinatra::Base
@@ -36,6 +37,7 @@ class MakersBnB < Sinatra::Base
 
   get "/spaces" do
     @user = User.find(id: session[:user_id])
+    @spaces = Space.all
     erb :"/space/spaces"
   end
 
@@ -44,7 +46,7 @@ class MakersBnB < Sinatra::Base
   end
   
   post '/spaces' do
-    #space = Space.create(id: params[:id], name: params[:name], description: params[:description], )
+    @space = Space.create(name: params[:name], description: params[:description], price_per_night: params[:price_per_night], available_from: params[:available_from], available_to: params[:available_to])
     #this will be connected to the space model
     redirect '/spaces'
   end

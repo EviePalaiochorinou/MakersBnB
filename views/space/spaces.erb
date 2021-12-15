@@ -1,6 +1,14 @@
 <h1> Welcome! <%= @user.username %> </h1>
 <h1> Here are all the listings: </h1>
 
+<ul>
+<% @spaces.each do |space| %>
+    <li> <%= space.name %> </li>
+    <li> <%= space.description %> </li>
+    <li> <%= space.price_per_night %> </li>
+<% end %>
+</ul>
+
 <form action="/" method='get'>
 	<input type="submit" value='Signout'>
 </form>
