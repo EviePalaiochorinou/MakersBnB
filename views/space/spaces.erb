@@ -1,0 +1,16 @@
+<h1> Welcome! <%= @user.username %> </h1>
+<h1> Here are all the listings: </h1>
+
+
+
+<form action="/" method='get'>
+	<input type="submit" value='Signout'>
+</form>
+
+# => READ: see all listings
+
+# has button 'List a space' that takes us to '/spaces/new'
+
+# feature test part:
+# visit '/spaces'
+# click_button('List a Space')
