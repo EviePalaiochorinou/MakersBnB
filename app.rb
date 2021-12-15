@@ -42,6 +42,12 @@ class MakersBnB < Sinatra::Base
   get "/spaces/new" do
     erb :"/space/new"
   end
+  
+  post '/spaces' do
+    #space = Space.create(id: params[:id], name: params[:name], description: params[:description], )
+  # this will be connected to the space model
+    redirect '/spaces'
+  end
 
   post '/sessions/destroy' do
 		session.clear
