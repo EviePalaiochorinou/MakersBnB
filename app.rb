@@ -30,13 +30,23 @@ class MakersBnB < Sinatra::Base
     user = User.authenticate(email: params[:email], password: params[:password])
     if user 
       session[:user_id] = user.id
-      redirect "/space/listings"
+      redirect "/spaces"
     end
   end
 
-  get "/space/listings" do
+  get "/spaces" do
     @user = User.find(id: session[:user_id])
-    erb :"/space/listings"
+    erb :"/space/spaces"
+  end
+
+  get "/spaces/new" do
+    erb :"/space/new"
+  end
+  
+  post '/spaces' do
+    #space = Space.create(id: params[:id], name: params[:name], description: params[:description], )
+  # this will be connected to the space model
+    redirect '/spaces'
   end
 
 ### IT IS PLURAL IN THE MOCK UP => spaces ! and starts at '/spaces/1'

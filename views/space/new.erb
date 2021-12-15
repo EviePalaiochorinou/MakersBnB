@@ -1,12 +1,38 @@
-# => READ: displays the 'List A Space' form
 
-# feature test part:
-# fill_in('name', with: 'Makers Office')
-#     fill_in('description', with: 'a charming open space with exposed bricks')
-#     fill_in('price per night', with: '£100')
-#     fill_in('available from', with: '01-01-2022')
-#     fill_in('available to', with: '06-01-2022')
+<link rel="stylesheet" href="/list_a_space.css">
 
-#     click_button('List my Space')
-# takes us to 'spaces' POST route
-# where we will use the params we get from the form
+<h1>List a Space</h1>
+
+<form action='/spaces' method='post'>
+
+	<div id='fields' >
+		<label for='name'>name
+			<input type='text' name='name'>
+		</label>
+	</div>
+
+	<div id='fields'>
+		<label for='description'>Description
+			<textarea name='description'rows="4" cols="40"></textarea>
+		</label>
+	</div>
+
+	<div id='fields'>
+		<label for='price_per_night'>Price per night (£)
+			<input type='text' name='price_per_night'>
+		</label>
+	</div>
+
+	<div id='fields'>
+		<label for='available_from'>available from (DD/MM/YY)
+			<input type='date' name='available_from'>
+		</label>
+	</div>
+
+  <div id='fields'>
+        <label for='available_to'>available to (DD/MM/YY)
+            <input type='date' name='available_to'>
+        </label>
+  </div>
+  <input class='submit-btn' type='submit' value='Submit'>
+</form>

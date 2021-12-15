@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+h1{
+	color: #FF5A5F;
+	font-family: 'Roboto', sans-serif;
+}
+
+form{
+	border: 2px green solid;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: 'Roboto', sans-serif;
+}
+
+#fields{
+	margin-top: 2em;
+}
+
+.submit-btn{
+	margin-top: 1em;
+	padding: 7px 15px;
+	border-radius: 10px; 
+	font-family: 'Roboto', sans-serif;
+	border: none;
+}
