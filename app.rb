@@ -45,7 +45,7 @@ class MakersBnB < Sinatra::Base
   
   post '/spaces' do
     #space = Space.create(id: params[:id], name: params[:name], description: params[:description], )
-  # this will be connected to the space model
+    #this will be connected to the space model
     redirect '/spaces'
   end
 
