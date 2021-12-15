@@ -15,13 +15,19 @@ class Space
 
     # def self.all # a method that returns all the spaces listed in the database as a new array
 
-      # 1) result = connect to db and use sql query to select all the rows !!! exept available_from and available_to
+      # 1) result = connect to db and use sql query to select all the rows !!!
         # we get an array contain hashes? (1 hash/item per row?)
         # use Time parse + strftime to format our dat if we want (simplest solution?)
 
       # 2) we .map our result : wrap each data entry into a Space instance
 
     # end
+
+    def self.all
+        result = DatabaseConnection.query(
+            "SELECT * FROM spaces (name, description, price_per_night) VALUES ($1"
+        )
+    end
 
     def self.create(name:, description:, price_per_night:, available_from:, available_to:)
         result = DatabaseConnection.query(
