@@ -49,6 +49,20 @@ class MakersBnB < Sinatra::Base
     redirect '/spaces'
   end
 
+### IT IS PLURAL IN THE MOCK UP => spaces ! and starts at '/spaces/1'
+  # get '/spaces' do        # => READ: see all listings
+  #   erb :'spaces/index'   # => index page to display all spaces with button 'List A Space'
+  # end
+
+  # get '/spaces/new' do    # => READ: displays the 'List A Space' form
+  #   erb :'spaces/new'
+  # end
+
+  # post '/spaces' do       # => CREATE: one Space
+  #   # use logic from the Model to use the params
+  #   redirect '/spaces'
+  # end
+
   post '/sessions/destroy' do
 		session.clear
 		redirect('/')
