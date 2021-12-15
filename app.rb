@@ -51,6 +51,10 @@ class MakersBnB < Sinatra::Base
     redirect '/spaces'
   end
 
+  get '/requests' do
+    erb :'space/requests'
+  end
+
 ### IT IS PLURAL IN THE MOCK UP => spaces ! and starts at '/spaces/1'
   # get '/spaces' do        # => READ: see all listings
   #   erb :'spaces/index'   # => index page to display all spaces with button 'List A Space'
