@@ -30,16 +30,16 @@ class MakersBnB < Sinatra::Base
     user = User.authenticate(email: params[:email], password: params[:password])
     if user 
       session[:user_id] = user.id
-      redirect "/space/spaces"
+      redirect "/spaces"
     end
   end
 
-  get "/space/spaces" do
+  get "/spaces" do
     @user = User.find(id: session[:user_id])
     erb :"/space/spaces"
   end
 
-  get "/space/new" do
+  get "/spaces/new" do
     erb :"/space/new"
   end
 

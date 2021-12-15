@@ -5,6 +5,6 @@ feature 'sign-in' do
 
     sign_in
 
-		expect(current_path).to eq '/space/listings'
+		expect(current_path).to eq '/spaces'
   end   
 end
