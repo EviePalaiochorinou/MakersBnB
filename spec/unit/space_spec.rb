@@ -22,6 +22,8 @@ describe Space do
         expect(all_spaces.length).to eq 3
         expect(all_spaces.first.name).to eq 'Makers Mansion'
         expect(all_spaces.last.price_per_night).to eq 100
+        expect(all_spaces.last.available_from).to eq '07/08/2022'
+        expect(all_spaces.first.available_to).to eq '06/01/2022'
     end
   end
 end
