@@ -51,10 +51,11 @@ class MakersBnB < Sinatra::Base
     redirect '/spaces'
   end
 
-  get '/spaces/1' do
+  get '/spaces/1' do # shows calendar
+    session[:space_id] = @space.id
+
     erb :"/space/1"
   end
-
 
   post '/sessions/destroy' do
 		session.clear
