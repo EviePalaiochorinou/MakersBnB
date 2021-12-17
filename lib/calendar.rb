@@ -15,14 +15,14 @@ class Calendar
       "SELECT * FROM spaces WHERE id = $1;",
       [id]
     )
-    p result
+    result
 
 # available_from: 'YYYY/MM/DD'
 
     Calendar.new(
 			id: result[0]['id'], 
-			start_day: (Date.parse(result[0]['available_from'])).strftime("%m/%d/%Y"),
-      end_day: (Date.parse(result['available_to'])).strftime("%m/%d/%Y")
+			start_day: result[0]['available_from'],
+      end_day: result['available_to']
     )
   end
 

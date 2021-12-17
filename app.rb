@@ -52,9 +52,9 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/spaces/1' do # shows calendar
-    session[:space_id] = @space.id
+    #session[:space_id] = @space.id
 
-    erb :"/space/1"
+  erb :"/space/1" 
   end
 
   post '/sessions/destroy' do
