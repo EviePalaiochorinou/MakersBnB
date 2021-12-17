@@ -64,7 +64,8 @@ class Space
       description: result[0]['description'],
       price_per_night: result[0]['price_per_night'],
 			available_from: result[0]['available_from'],
-			available_to: result[0]['available_to']
+			available_to: result[0]['available_to'],
+      user_id: result[0]['user_id']
 		)
 	end
     end
