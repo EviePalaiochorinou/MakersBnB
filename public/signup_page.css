@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
 body{
-	min-height: 90vh;
+	min-height: 70vh;
 	background-color: whitesmoke;
 }
 
@@ -70,3 +70,4 @@ input[type=text]{
 	font-family: 'Roboto', sans-serif;
 	opacity: 0.8;
 }
+
