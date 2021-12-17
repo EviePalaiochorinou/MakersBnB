@@ -26,4 +26,14 @@ describe Space do
         expect(all_spaces.first.available_to).to eq '06/01/2022'
     end
   end
+
+  describe "#find" do
+  it "it finds the space using id" do
+    space = Space.create(name: 'Makers Mansion', description: 'a charming mansion in E London', price_per_night: 400, available_from: '01/01/2022', available_to: '06/01/2022')
+    result = Space.find(id: space.id)
+
+    expect(result.available_from).to eq space.available_from
+    expect(result.available_to).to eq space.available_to
+  end
+end
 end
