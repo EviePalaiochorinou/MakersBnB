@@ -38,6 +38,8 @@ class MakersBnB < Sinatra::Base
   get "/spaces" do
     @user = User.find(id: session[:user_id])
     @spaces = Space.all
+    session[:space_id] = params[:space_id]
+
     erb :"/space/spaces"
   end
 
@@ -51,9 +53,9 @@ class MakersBnB < Sinatra::Base
     redirect '/spaces'
   end
 
-  get '/spaces/1' do # shows calendar
-    #session[:space_id] = @space.id
-
+  get '/spaces/:space_id' do # shows calendar
+    #session[:space_id] = params[:space_id]
+    @space = Space.find(id: session[:space_id])
   erb :"/space/1" 
   end
 
