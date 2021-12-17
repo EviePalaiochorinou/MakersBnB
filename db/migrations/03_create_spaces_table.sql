@@ -1,1 +1,1 @@
-CREATE TABLE spaces(id SERIAL PRIMARY KEY, name VARCHAR(100), description VARCHAR(300), price_per_night INTEGER, available_from DATE, available_to DATE);
+CREATE TABLE spaces(id SERIAL PRIMARY KEY, name VARCHAR(100), description VARCHAR(300), price_per_night INTEGER, available_from DATE, available_to DATE, user_id INT, FOREIGN KEY(user_id) REFERENCES users(id));

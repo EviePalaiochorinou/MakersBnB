@@ -3,7 +3,7 @@ feature 'sign-up' do
     sign_up
 
     expect(page).to have_current_path('/sessions/new')
-    expect(page).to have_content("Sign in")
+    expect(page).to have_content("Login")
     
   end   
 end

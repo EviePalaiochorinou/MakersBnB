@@ -46,7 +46,8 @@ class MakersBnB < Sinatra::Base
   end
   
   post '/spaces' do
-    @space = Space.create(name: params[:name], description: params[:description], price_per_night: params[:price_per_night], available_from: params[:available_from], available_to: params[:available_to])
+    @user = User.find(id: session[:user_id])
+    @space = Space.create(name: params[:name], description: params[:description], price_per_night: params[:price_per_night],available_from: params[:available_from], available_to: params[:available_to], user_id: @user.id)
     #this will be connected to the space model
     redirect '/spaces'
   end

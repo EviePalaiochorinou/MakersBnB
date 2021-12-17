@@ -1,18 +1,24 @@
+<link rel="stylesheet" href="/spaces.css">
 <h1> Welcome! <%= @user.username %> </h1>
-<h1> Here are all the listings: </h1>
+<h1> Book a Space </h1>
+<h2>Find your perfect house for the night or more</h2>
 
-<ul>
-<% @spaces.each do |space| %>
-    <li> <%= space.name %> </li>
-    <li> <%= space.description %> </li>
-    <li> <%= space.price_per_night %> </li>
-<% end %>
-</ul>
+<div class='listings'>
+  <ul>
+  <% @spaces.each do |space| %>
+      <li> <%= space.name %> </li>
+      <li> <%= space.description %> </li>
+      <li> <%= space.price_per_night %> </li>
+  <% end %>
+  </ul>
+</div>
 
-<form action="/" method='get'>
-	<input type="submit" value='Signout'>
-</form>
+<div class='buttons'>
+  <form action="/sessions/destroy" method='post'>
+    <input type="submit" value='Signout'>
+  </form>
 
-<form action='/spaces/new' method='get'>
-  <input type='submit' value='List a Space'>
-</form>
+  <form action='/spaces/new' method='get'>
+    <input type='submit' value='List a Space'>
+  </form>
+  </div>
