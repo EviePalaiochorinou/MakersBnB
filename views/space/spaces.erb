@@ -3,15 +3,16 @@
 <h1> Book a Space </h1>
 <h2>Find your perfect house for the night or more</h2>
 
-<div class='listings'>
-  <ul>
-  <% @spaces.each do |space| %>
-      <li> <%= space.name %> </li>
-      <li> <%= space.description %> </li>
-      <li> <%= space.price_per_night %> </li>
-  <% end %>
-  </ul>
-</div>
+<ul>
+<% @spaces.each do |space| %>
+    <li> <%= space.name %>
+    <%= space.description %>
+    <%= space.price_per_night %> </li>
+<% end %>
+ <form action="/spaces/1" method='get'>
+	<input type="submit" value='book this space'>
+</form>
+</ul>
 
 <div class='buttons'>
   <form action="/sessions/destroy" method='post'>

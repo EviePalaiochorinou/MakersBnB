@@ -38,6 +38,8 @@ class MakersBnB < Sinatra::Base
   get "/spaces" do
     @user = User.find(id: session[:user_id])
     @spaces = Space.all
+    session[:space_id] = params[:space_id]
+
     erb :"/space/spaces"
   end
 
@@ -52,19 +54,11 @@ class MakersBnB < Sinatra::Base
     redirect '/spaces'
   end
 
-### IT IS PLURAL IN THE MOCK UP => spaces ! and starts at '/spaces/1'
-  # get '/spaces' do        # => READ: see all listings
-  #   erb :'spaces/index'   # => index page to display all spaces with button 'List A Space'
-  # end
-
-  # get '/spaces/new' do    # => READ: displays the 'List A Space' form
-  #   erb :'spaces/new'
-  # end
-
-  # post '/spaces' do       # => CREATE: one Space
-  #   # use logic from the Model to use the params
-  #   redirect '/spaces'
-  # end
+  get '/spaces/:space_id' do # shows calendar
+    #session[:space_id] = params[:space_id]
+    @space = Space.find(id: session[:space_id])
+  erb :"/space/1" 
+  end
 
   post '/sessions/destroy' do
 		session.clear

@@ -50,4 +50,21 @@ class Space
           user_id: result[0]['user_id']
           )
         end
+
+    def self.find(id:)
+		return nil unless id
+		
+		result = DatabaseConnection.query(
+			"SELECT * FROM spaces WHERE id = $1",
+			[id]
+		)
+		Space.new(
+			id: result[0]['id'], 
+      name: result[0]['name'],
+      description: result[0]['description'],
+      price_per_night: result[0]['price_per_night'],
+			available_from: result[0]['available_from'],
+			available_to: result[0]['available_to']
+		)
+	end
     end
